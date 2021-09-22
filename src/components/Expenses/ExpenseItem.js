@@ -9,6 +9,7 @@ const ExpenseItem = props => {
   // React Hook (Can only be called inside component functions and outside nested functions)
   // Convention is [name, setName]
   const [title, setTitle] = useState(props.title);
+  console.log('ExpenseItem evaluated by React');
 
   const clickHandler = () => { // Convention is to end handlers with "Handler"
     setTitle('Updated!');
