@@ -5,7 +5,7 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 // Convention is to repeat file name to method name
-const ExpenseItem = props => {
+const ExpenseItem = (props) => {
   // React Hook (Can only be called inside component functions and outside nested functions)
   // Convention is [name, setName]
   // const [title, setTitle] = useState(props.title);
@@ -13,14 +13,16 @@ const ExpenseItem = props => {
 
   return (
     // Only one root element (1 div)
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+      </Card>
+    </li>
   ); // No parenthesis when executing method because JS would execute function when parsing line
-}
+};
 
 export default ExpenseItem;
